@@ -1,9 +1,14 @@
-**/.DS_Store
-**/Capstone_Design/CarPoolApp/Pods/
+.DS_Store
+# Created by https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,cocoapods,xcode
 
+### CocoaPods ###
+## CocoaPods GitIgnore Template
 
-# Created by https://www.toptal.com/developers/gitignore/api/swift
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
 
 ### Swift ###
 # Xcode
@@ -89,4 +94,16 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# End of https://www.toptal.com/developers/gitignore/api/swift
+### Xcode ###
+
+## Xcode 8 and earlier
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
