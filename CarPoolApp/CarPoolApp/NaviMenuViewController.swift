@@ -5,28 +5,35 @@
 //  Created by 지정훈 on 2022/07/01.
 //
 
-import Foundation
 import UIKit
 import NMapsMap
+import CoreLocation
 
-
-class NaviMenuViewController:UIViewController{
+class NaviMenuViewController:UIViewController,CLLocationManagerDelegate{
+    
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let naverMapView = NMFNaverMapView(frame: view.frame)
+        let naverMapView = NMFMapView(frame: view.frame)
                 view.addSubview(naverMapView)
-        naverMapView.showCompass = false
-        naverMapView.showLocationButton = true
+//        naverMapView.showCompass = false
+//        naverMapView.showLocationButton = true
         
+        locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.requestWhenInUseAuthorization()
+                
+                if CLLocationManager.locationServicesEnabled() {
+                    print("위치 서비스 On 상태")
+                    locationManager.startUpdatingLocation()
+                    print(locationManager.location?.coordinate)
+                    
+                } else {
+                    print("위치 서비스 Off 상태")
+                }
 
-//        NMFmapview.positionMode = .
-        
-    
-    }
-    
-}
-
-extension class NMFMapView : UIView{
+            }
     
 }

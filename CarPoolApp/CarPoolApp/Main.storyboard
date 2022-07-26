@@ -54,7 +54,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
                                 <connections>
                                     <action selector="LoginButtonTapped:" destination="CEl-tv-gNf" eventType="touchUpInside" id="9YR-zw-gz0"/>
-                                    <segue destination="99j-fw-aJe" kind="push" id="qUY-mh-FfK"/>
+                                    <segue destination="99j-fw-aJe" kind="show" id="K2B-RW-xPV"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_image" translatesAutoresizingMaskIntoConstraints="NO" id="enk-l3-fcj">
