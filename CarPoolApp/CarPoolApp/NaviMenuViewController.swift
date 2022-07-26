@@ -34,6 +34,9 @@ class NaviMenuViewController:UIViewController,CLLocationManagerDelegate{
                     let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
                                 cameraUpdate.animation = .easeIn
                                 naverMapView.moveCamera(cameraUpdate)
+                    let marker = NMFMarker()
+                                marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
+                                marker.mapView = naverMapView
                 } else {
                     print("위치 서비스 Off 상태")
                 }
