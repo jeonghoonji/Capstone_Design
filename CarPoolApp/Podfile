@@ -9,6 +9,8 @@ target 'CarPoolApp' do
   pod 'KakaoSDK'
   pod 'NMapsMap' 
   pod 'Alamofire'
+  pod 'SwiftyJSON'
+
 end
 
 post_install do |installer|

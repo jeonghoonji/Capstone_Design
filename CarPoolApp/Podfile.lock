@@ -36,11 +36,13 @@ PODS:
   - KakaoSDKUser (2.11.0):
     - KakaoSDKAuth (= 2.11.0)
   - NMapsMap (3.15.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - KakaoSDK
   - NMapsMap
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -56,6 +58,7 @@ SPEC REPOS:
     - KakaoSDKTemplate
     - KakaoSDKUser
     - NMapsMap
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
@@ -70,7 +73,8 @@ SPEC CHECKSUMS:
   KakaoSDKTemplate: 61a4c2e46bbaee884770b2f1cd7d59cdbbc1e250
   KakaoSDKUser: 5dbefe494c50dfdc87e4072710e503d39b41a609
   NMapsMap: f151761c088d6516064c59da03ab6503769486e6
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 5fd3cd92baaf3ec9ad794d0881ace04f9d267660
+PODFILE CHECKSUM: 74e44bbfd56991a5be6d1c786f7a62c2f23c8ab2
 
 COCOAPODS: 1.11.3
