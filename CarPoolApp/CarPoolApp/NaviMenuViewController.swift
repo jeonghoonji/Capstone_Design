@@ -28,7 +28,7 @@ class NaviMenuViewController:UIViewController,CLLocationManagerDelegate{
         if CLLocationManager.locationServicesEnabled() {
             print("위치 서비스 On 상태")
             locationManager.startUpdatingLocation()
-            print(locationManager.location?.coordinate)
+//            print(locationManager.location?.coordinate)
                     
                     
             let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))

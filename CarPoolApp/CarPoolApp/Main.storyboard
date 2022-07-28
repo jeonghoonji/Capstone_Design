@@ -152,6 +152,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="getDirectionButtonTapped:" destination="rpg-WC-abV" eventType="touchUpInside" id="MTx-R3-Cwz"/>
                                     <segue destination="cbS-VN-5Ix" kind="push" id="AKh-sp-Rlk"/>
                                 </connections>
                             </button>
@@ -193,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPs-V3-218" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="224"/>
+            <point key="canvasLocation" x="534.78260869565224" y="223.66071428571428"/>
         </scene>
         <!--Navi Menu View Controller-->
         <scene sceneID="LDI-Ic-8BR">

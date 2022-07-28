@@ -22,7 +22,7 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     var locationManager = CLLocationManager()
     
     //깃허브에는 숨길 코드
-  
+    
     let NAVER_CLIENT_SECRET = "JjUu0Dj6QJTszkxa35uQeKUtbN8RoMm4wIyzml6N"
     let NAVER_REVERSE_GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="
     let sourcecrs = "&sourcecrs="
@@ -100,7 +100,14 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let station = startPointTextField.text
+        
+        
+       
+        
+    }
+
+    @IBAction func getDirectionButtonTapped(_ sender: UIButton) {
+        let station = endPointTextField.text
         guard let encodeAddress = station?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! else { return  }
         
         
@@ -117,19 +124,18 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                        let data = json["addresses"]
                        let lat = data[0]["y"]
                        let lon = data[0]["x"]
-//                       print("홍대입구역의","위도는",lat,"경도는",lon)
+                       print("\(self.endPointTextField.text)","위도는",lat,"경도는",lon)
                    case .failure(let error):
                        print(error.errorDescription ?? "")
                    default :
                        fatalError()
                    }
                }
+//
     
-        
-       
-        
     }
-
+    
+    
     @IBAction func currentButtonTapped(_ sender: Any) {
         print("button tapped")
         
