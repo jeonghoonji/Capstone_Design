@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		341476710B0908DBF23B01B9 /* Pods_CarPoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB8A052B355B4C5C291B6D1 /* Pods_CarPoolApp.framework */; };
+		A74208A128CB89E7008CE08A /* FindDriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74208A028CB89E7008CE08A /* FindDriverView.swift */; };
 		A74C1E41286E1623000CB391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E40286E1623000CB391 /* AppDelegate.swift */; };
 		A74C1E43286E1623000CB391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E42286E1623000CB391 /* SceneDelegate.swift */; };
 		A74C1E45286E1623000CB391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E44286E1623000CB391 /* ViewController.swift */; };
@@ -18,12 +19,17 @@
 		A74C1E59286EDB59000CB391 /* PickUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E58286EDB59000CB391 /* PickUserViewController.swift */; };
 		A74C1E5B286EDBC5000CB391 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */; };
 		A74C1E5D286EDC09000CB391 /* NaviMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */; };
-		A74C1E5F2875665B000CB391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C1E5E2875665B000CB391 /* Main.storyboard */; };
+		A78AED3128D4CA9E00981913 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3028D4CA9E00981913 /* KakaoSDK */; };
+		A78AED3328D4CA9E00981913 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3228D4CA9E00981913 /* KakaoSDKAuth */; };
+		A78AED3528D4CA9E00981913 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3428D4CA9E00981913 /* KakaoSDKCommon */; };
+		A78AED3728D4CA9E00981913 /* KakaoSDKNavi in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3628D4CA9E00981913 /* KakaoSDKNavi */; };
+		A7BC04F228D004EC0093BA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BC04F128D004EC0093BA55 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FB8A052B355B4C5C291B6D1 /* Pods_CarPoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE991646A6A20A294F01C92 /* Pods-CarPoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPoolApp.release.xcconfig"; path = "Target Support Files/Pods-CarPoolApp/Pods-CarPoolApp.release.xcconfig"; sourceTree = "<group>"; };
+		A74208A028CB89E7008CE08A /* FindDriverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDriverView.swift; sourceTree = "<group>"; };
 		A74C1E3D286E1623000CB391 /* CarPoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74C1E40286E1623000CB391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74C1E42286E1623000CB391 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		A74C1E58286EDB59000CB391 /* PickUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickUserViewController.swift; path = ../../../../../../../Applications/PickUserViewController.swift; sourceTree = "<group>"; };
 		A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
 		A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviMenuViewController.swift; sourceTree = "<group>"; };
-		A74C1E5E2875665B000CB391 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A7BC04F128D004EC0093BA55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CA43C733A5018A070D1443CD /* Pods-CarPoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPoolApp.debug.xcconfig"; path = "Target Support Files/Pods-CarPoolApp/Pods-CarPoolApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +53,10 @@
 			files = (
 				A74C1E55286E1BB7000CB391 /* Metal.framework in Frameworks */,
 				341476710B0908DBF23B01B9 /* Pods_CarPoolApp.framework in Frameworks */,
+				A78AED3128D4CA9E00981913 /* KakaoSDK in Frameworks */,
+				A78AED3728D4CA9E00981913 /* KakaoSDKNavi in Frameworks */,
+				A78AED3528D4CA9E00981913 /* KakaoSDKCommon in Frameworks */,
+				A78AED3328D4CA9E00981913 /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +97,13 @@
 				A74C1E42286E1623000CB391 /* SceneDelegate.swift */,
 				A74C1E44286E1623000CB391 /* ViewController.swift */,
 				A74C1E49286E1623000CB391 /* Assets.xcassets */,
-				A74C1E5E2875665B000CB391 /* Main.storyboard */,
+				A7BC04F128D004EC0093BA55 /* Main.storyboard */,
 				A74C1E4B286E1623000CB391 /* LaunchScreen.storyboard */,
 				A74C1E4E286E1623000CB391 /* Info.plist */,
 				A74C1E56286EDB03000CB391 /* LoginViewController.swift */,
 				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 				A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */,
+				A74208A028CB89E7008CE08A /* FindDriverView.swift */,
 				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
 			);
 			path = CarPoolApp;
@@ -125,6 +136,12 @@
 			dependencies = (
 			);
 			name = CarPoolApp;
+			packageProductDependencies = (
+				A78AED3028D4CA9E00981913 /* KakaoSDK */,
+				A78AED3228D4CA9E00981913 /* KakaoSDKAuth */,
+				A78AED3428D4CA9E00981913 /* KakaoSDKCommon */,
+				A78AED3628D4CA9E00981913 /* KakaoSDKNavi */,
+			);
 			productName = CarPoolApp;
 			productReference = A74C1E3D286E1623000CB391 /* CarPoolApp.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +170,9 @@
 				Base,
 			);
 			mainGroup = A74C1E34286E1623000CB391;
+			packageReferences = (
+				A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = A74C1E3E286E1623000CB391 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,7 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A74C1E5F2875665B000CB391 /* Main.storyboard in Resources */,
+				A7BC04F228D004EC0093BA55 /* Main.storyboard in Resources */,
 				A74C1E4D286E1623000CB391 /* LaunchScreen.storyboard in Resources */,
 				A74C1E4A286E1623000CB391 /* Assets.xcassets in Resources */,
 			);
@@ -229,6 +249,7 @@
 				A74C1E59286EDB59000CB391 /* PickUserViewController.swift in Sources */,
 				A74C1E43286E1623000CB391 /* SceneDelegate.swift in Sources */,
 				A74C1E5D286EDC09000CB391 /* NaviMenuViewController.swift in Sources */,
+				A74208A128CB89E7008CE08A /* FindDriverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +393,9 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarPoolApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "사용자의 위치를 받습니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치정보 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -402,6 +426,9 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarPoolApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치정보 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "사용자의 위치를 받습니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치정보 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -442,6 +469,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A78AED3028D4CA9E00981913 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		A78AED3228D4CA9E00981913 /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		A78AED3428D4CA9E00981913 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		A78AED3628D4CA9E00981913 /* KakaoSDKNavi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKNavi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A74C1E35286E1623000CB391 /* Project object */;
 }

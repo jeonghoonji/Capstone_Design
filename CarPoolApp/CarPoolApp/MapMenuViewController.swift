@@ -4,11 +4,19 @@
 //
 //  Created by 지정훈 on 2022/07/01.
 
+
+//해야할일
+//- 네이버 지도 처럼 맵위에 길찾기 텍스트 필드를 넣고 싶었지만 능력부족 지도를 보여주는 부분과 텍스트필드쪽 오토레이아웃 잡기
+//- 지도 아래 부분으로 드라이버 찾기 버튼 -> 이게 서버로 전송한는 버튼이며 FindDriverView으로 가는 코드 구현
+
+
+
 import UIKit
-import NMapsMap
+import NMapsMap 
 import SwiftyJSON
 import Alamofire
 import CoreLocation
+
 
 class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     
@@ -21,13 +29,7 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
 
     var locationManager = CLLocationManager()
     
-    //깃허브에는 숨길 코드
     
-    let NAVER_CLIENT_SECRET = "JjUu0Dj6QJTszkxa35uQeKUtbN8RoMm4wIyzml6N"
-    let NAVER_REVERSE_GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="
-    let sourcecrs = "&sourcecrs="
-    let orders = "&orders="
-    let output = "&output="
     
     //
     
@@ -52,8 +54,6 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
         naverMapView.showCompass = true
         naverMapView.showLocationButton = true
 
-//        let coord = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
-//        print("위도: \(coord.lat), 경도: \(coord.lng)")
         
         
         // 경위도는 double이며 CLLocationDegrees이기 때문에 강제 언래핑이 아닌 guard문을 이용하여 풀기
@@ -98,14 +98,6 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     //
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
-       
-        
-    }
-
     @IBAction func getDirectionButtonTapped(_ sender: UIButton) {
         let station = endPointTextField.text
         guard let encodeAddress = station?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! else { return  }
@@ -131,6 +123,7 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                        fatalError()
                    }
                }
+        
 //
     
     }

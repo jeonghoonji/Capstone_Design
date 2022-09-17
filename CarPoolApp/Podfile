@@ -6,10 +6,11 @@ target 'CarPoolApp' do
   use_frameworks!
 
   # Pods for CarPoolApp
-  pod 'KakaoSDK'
+
   pod 'NMapsMap' 
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  
 
 end
 

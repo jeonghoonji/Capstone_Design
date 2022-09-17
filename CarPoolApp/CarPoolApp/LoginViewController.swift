@@ -5,6 +5,12 @@
 //  Created by 지정훈 on 2022/07/01.
 //
 
+
+//해야 할일
+//- 로그인 토큰이 있을시 MapMenuViewController 으로 이동 코드 작성
+//- 로그인 토큰이 없을시 회원가입 및 정보 동의 후 PickUserViewController 으로 이동하여 유저의 드라이버/라이더 정보 저장 후
+//  MapMenuViewController으로 이동 코드 작성
+
 import Foundation
 import UIKit
 import KakaoSDKUser
@@ -40,7 +46,7 @@ class LoginViewController:UIViewController{
     }
     
     @IBAction func LoginButtonTapped(_ sender: UIButton) {
-        
+//
         if (AuthApi.hasToken()) {
             UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
