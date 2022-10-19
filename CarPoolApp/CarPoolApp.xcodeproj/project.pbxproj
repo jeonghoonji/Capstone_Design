@@ -103,11 +103,11 @@
 				A74C1E4B286E1623000CB391 /* LaunchScreen.storyboard */,
 				A74C1E4E286E1623000CB391 /* Info.plist */,
 				A74C1E56286EDB03000CB391 /* LoginViewController.swift */,
-				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 				A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */,
 				A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */,
 				A74208A028CB89E7008CE08A /* FindDriverView.swift */,
 				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
+				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 			);
 			path = CarPoolApp;
 			sourceTree = "<group>";
