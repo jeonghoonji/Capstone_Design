@@ -15,9 +15,7 @@ import CoreLocation
 
 
 class MapPolyLineNaviViewController:UIViewController,CLLocationManagerDelegate{
-    
-  
-    
+
     var test1 : Double = 0.0
     var test2 : Double = 0.0
     

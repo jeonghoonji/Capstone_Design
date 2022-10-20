@@ -178,13 +178,14 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
         //
         let header1 = HTTPHeader(name: "Authorization", value: KAKAO_API_KEY)
         let kakaoHeaders = HTTPHeaders([header1])
-        print("kakaoHeaders: \(kakaoHeaders)")
+//        print("kakaoHeaders: \(kakaoHeaders)")
         AF.request(KAKAO_URL,method: .get , headers: kakaoHeaders).validate()
             .responseJSON{ response in
                 switch response.result {
                 case .success(let value):
                     print("KAKAO SUCCESS")
-                    print(value)
+                    let json = JSON(value)
+                    print(json)
                     
                     
                 case .failure(let error):
@@ -195,6 +196,34 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                 }
             }
     }
+    
+
+
+
+    @IBAction func kakaoTestButton(_ sender: Any) {
+        let header1 = HTTPHeader(name: "Authorization", value: KAKAO_API_KEY)
+        let kakaoHeaders = HTTPHeaders([header1])
+        AF.request(KAKAO_URL_ADDRESS,method: .get , headers: kakaoHeaders).validate()
+            .responseJSON{ response in
+                switch response.result {
+                case .success(let value):
+                    print("KAKAO SUCCESS")
+                    let json = JSON(value)
+                    print(json)
+                    
+                    
+                case .failure(let error):
+                    print("KAKAO FAIL")
+                    print(error.errorDescription ?? "" )
+                default:
+                    fatalError()
+                }
+            }
+        
+    //
+    }
+    
+    
     
 //
 }
