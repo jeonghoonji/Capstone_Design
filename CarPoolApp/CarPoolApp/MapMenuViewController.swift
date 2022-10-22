@@ -30,21 +30,9 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     
-    struct Addresses: Decodable{
-        var x : Double = 0.0
-        var y : Double = 0.0
-        
-        init(x: Double, y: Double) {
-            self.x = x
-            self.y = y
-        }
-    }
-   
- 
-    
+
     //깃허브에는 숨길 코드
-   
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +141,9 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                        let lan = detail["y"]
                        let lon = detail["x"]
                        print("detail\(detail)")
+                       
+                       
+                       
 //                       print("lan: \(lan)")
 //                       print("lan Type:\(type(of:lan))")
 //                       print("lan: \(lon)")
@@ -206,12 +197,39 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
         AF.request(KAKAO_URL_ADDRESS,method: .get , headers: kakaoHeaders).validate()
             .responseJSON{ response in
                 switch response.result {
-                case .success(let value):
+                case .success(let value as [String:Any]):
+
                     print("KAKAO SUCCESS")
+
                     let json = JSON(value)
-                    print(json)
+                    let documents = json["documents"]
+                    let jsonArray = documents[0]
+                    let address = jsonArray["address"]
+
+                    do{
+       
+                        let encoder = JSONEncoder()
+                        encoder.outputFormatting = .prettyPrinted
+                        let xData = try encoder.encode(address["x"])
+                        let yData = try encoder.encode(address["y"])
                     
-                    
+                        var resultX = String(data: xData, encoding: .utf8)!
+                        var resultY = String(data: yData, encoding: .utf8)!
+                        
+                        //카카오 api 주소 검색에서 경도 위도 데이터 값 뽑아내기 문자열 처리
+                        let finalX = resultX.dropLast().dropFirst()
+                        let finalY = resultY.dropLast().dropFirst()
+                        
+                        
+                        print(finalX)
+                        print(finalY)
+
+          
+                    }catch (let error) {
+                        
+                    }
+                
+
                 case .failure(let error):
                     print("KAKAO FAIL")
                     print(error.errorDescription ?? "" )
