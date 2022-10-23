@@ -16,7 +16,7 @@ import NMapsMap
 import SwiftyJSON
 import Alamofire
 import CoreLocation
-
+import KakaoSDKNavi
 class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     
 
@@ -25,14 +25,22 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     @IBOutlet weak var mapView: UIView!
     
 
-    
-    @IBOutlet weak var testLabel: UILabel!
-    
     var locationManager = CLLocationManager()
     
 
     //깃허브에는 숨길 코드
- 
+    let KAKAO_API_KEY = "KakaoAK 2802fecadb4f108816903ba754d617ed"
+
+    let NAVER_GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query="
+    let NAVER_CLIENT_ID = "jk1xs2tu2j"
+    let NAVER_CLIENT_SECRET = "JjUu0Dj6QJTszkxa35uQeKUtbN8RoMm4wIyzml6N"
+    let NAVER_REVERSE_GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords="
+    let sourcecrs = "&sourcecrs="
+    let orders = "&orders="
+    let output = "&output="
+    
+    var directX : String = ""
+    var directY : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +57,7 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
         let header2 = HTTPHeader(name: "X-NCP-APIGW-API-KEY", value: NAVER_CLIENT_SECRET)
         let headers = HTTPHeaders([header1,header2])
         
-
+09
     
         
         let naverMapView = NMFMapView(frame: view.frame)
@@ -117,15 +125,15 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     }
     
     @IBAction func getDirectionButtonTapped(_ sender: UIButton) {
+        
+        
+        // 도착지 문자열 보내는 네이버 api
         let station = endPointTextField.text
         guard let encodeAddress = station?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! else { return  }
 
-        //숨겨야할 코드
         let header1 = HTTPHeader(name: "X-NCP-APIGW-API-KEY-ID", value: NAVER_CLIENT_ID)
         let header2 = HTTPHeader(name: "X-NCP-APIGW-API-KEY", value: NAVER_CLIENT_SECRET)
         let headers = HTTPHeaders([header1,header2])
-        print("headers: \(headers)")
-        //폴리메뉴로 도착지 한글 보내기
         let endString = (self.endPointTextField.text)!
         UserDefaults.standard.setValue(endString, forKey: "endPointTextUserDefaults")
 
@@ -140,19 +148,6 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
 
                        let lan = detail["y"]
                        let lon = detail["x"]
-                       print("detail\(detail)")
-                       
-                       
-                       
-//                       print("lan: \(lan)")
-//                       print("lan Type:\(type(of:lan))")
-//                       print("lan: \(lon)")
-                       
-//                       let test : Addresses = Addresses(x: lan.rawValue as! Double, y: lon.rawValue as! Double)
-//                       print(test)
-
-               
-                       print("lon Type:\(type(of:lon))")
                    case .failure(let error):
                        print(error.errorDescription ?? "")
                    default :
@@ -160,47 +155,20 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                    }
                }
         
-    //
-    }
+        let urlStr = endString
+        guard let encodedStr = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
 
-
-    
-    @IBAction func testButton(_ sender: Any) {
-        //
-        let header1 = HTTPHeader(name: "Authorization", value: KAKAO_API_KEY)
-        let kakaoHeaders = HTTPHeaders([header1])
-//        print("kakaoHeaders: \(kakaoHeaders)")
-        AF.request(KAKAO_URL,method: .get , headers: kakaoHeaders).validate()
-            .responseJSON{ response in
-                switch response.result {
-                case .success(let value):
-                    print("KAKAO SUCCESS")
-                    let json = JSON(value)
-                    print(json)
-                    
-                    
-                case .failure(let error):
-                    print("KAKAO FAIL")
-                    print(error.errorDescription ?? "" )
-                default:
-                    fatalError()
-                }
-            }
-    }
-    
-
-
-
-    @IBAction func kakaoTestButton(_ sender: Any) {
-        let header1 = HTTPHeader(name: "Authorization", value: KAKAO_API_KEY)
-        let kakaoHeaders = HTTPHeaders([header1])
+        let url = URL(string: encodedStr)!
+        
+        //경도 위도 보내는 카카오 api
+        
+        let KAKAO_URL_ADDRESS = "https://dapi.kakao.com/v2/local/search/address.json?analyze_type=similar&page=1&size=10&query=\(url.absoluteString)"
+        let kakaoHeader1 = HTTPHeader(name: "Authorization", value: KAKAO_API_KEY)
+        let kakaoHeaders = HTTPHeaders([kakaoHeader1])
         AF.request(KAKAO_URL_ADDRESS,method: .get , headers: kakaoHeaders).validate()
             .responseJSON{ response in
                 switch response.result {
                 case .success(let value as [String:Any]):
-
-                    print("KAKAO SUCCESS")
-
                     let json = JSON(value)
                     let documents = json["documents"]
                     let jsonArray = documents[0]
@@ -216,14 +184,16 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                         var resultX = String(data: xData, encoding: .utf8)!
                         var resultY = String(data: yData, encoding: .utf8)!
                         
-                        //카카오 api 주소 검색에서 경도 위도 데이터 값 뽑아내기 문자열 처리
+                        //카카오 api 주소 검색에서 경도 위도 데이터 값 뽑아내기 문자열 추출
                         let finalX = resultX.dropLast().dropFirst()
                         let finalY = resultY.dropLast().dropFirst()
                         
+                        self.directX = String(finalX)
+                        self.directY = String(finalY)
                         
-                        print(finalX)
-                        print(finalY)
-
+                        UserDefaults.standard.setValue(finalX, forKey: "endPointXUserDefaults")
+                        UserDefaults.standard.setValue(finalY, forKey: "endPointYUserDefaults")
+    
           
                     }catch (let error) {
                         
@@ -231,16 +201,23 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
                 
 
                 case .failure(let error):
-                    print("KAKAO FAIL")
+                    print("COORDINATE KAKAO FAIL")
                     print(error.errorDescription ?? "" )
                 default:
                     fatalError()
                 }
             }
         
+       
+        
     //
     }
+
+
     
+    
+
+
     
     
 //

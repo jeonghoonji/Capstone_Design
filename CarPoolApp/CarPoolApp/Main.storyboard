@@ -154,15 +154,6 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6w-kx-sIM">
-                                <rect key="frame" x="156" y="322" width="102" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="테스트 버튼"/>
-                                <connections>
-                                    <action selector="testButton:" destination="rpg-WC-abV" eventType="touchUpInside" id="zfB-kb-27N"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qdr-Lv-UJv">
                                 <rect key="frame" x="20" y="132" width="374" height="88"/>
                                 <subviews>
@@ -189,22 +180,6 @@
                                     <segue destination="6DG-rS-QNM" kind="show" id="ye2-Zn-waZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEF-MI-cZi">
-                                <rect key="frame" x="183" y="365" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eas-0a-sKs">
-                                <rect key="frame" x="170" y="412" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="kakaoTestButton:" destination="rpg-WC-abV" eventType="touchUpInside" id="4TA-s4-hka"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tqR-7s-9EK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,7 +200,6 @@
                         <outlet property="endPointTextField" destination="1ck-Wq-Wp4" id="ett-rg-OpD"/>
                         <outlet property="mapView" destination="FXf-Zc-9tL" id="BY4-H4-Ttz"/>
                         <outlet property="startPointTextField" destination="zA4-2d-4ag" id="8Z9-eD-2eB"/>
-                        <outlet property="testLabel" destination="NEF-MI-cZi" id="cTB-TH-sZt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPs-V3-218" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,36 +310,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-Ob-YJf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8e-3f-3mL">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcG-aA-xRj">
-                                <rect key="frame" x="173" y="711" width="100" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="길찾기"/>
-                                <connections>
-                                    <segue destination="cbS-VN-5Ix" kind="show" id="vJp-fZ-hlL"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wQw-zy-1HD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sFX-Ob-YJf" firstAttribute="leading" secondItem="wQw-zy-1HD" secondAttribute="leading" id="9nM-7A-vPf"/>
-                            <constraint firstItem="DcG-aA-xRj" firstAttribute="top" secondItem="wQw-zy-1HD" secondAttribute="top" constant="663" id="A5N-IF-zvg"/>
-                            <constraint firstItem="wQw-zy-1HD" firstAttribute="bottom" secondItem="sFX-Ob-YJf" secondAttribute="bottom" id="Ne6-zY-3Et"/>
-                            <constraint firstItem="DcG-aA-xRj" firstAttribute="centerX" secondItem="wQw-zy-1HD" secondAttribute="centerX" id="Rkf-RK-1Wo"/>
-                            <constraint firstItem="wQw-zy-1HD" firstAttribute="trailing" secondItem="sFX-Ob-YJf" secondAttribute="trailing" id="XFg-Hl-cV4"/>
-                            <constraint firstItem="sFX-Ob-YJf" firstAttribute="top" secondItem="wQw-zy-1HD" secondAttribute="top" id="c1m-Yo-BZN"/>
-                            <constraint firstItem="DcG-aA-xRj" firstAttribute="leading" secondItem="wQw-zy-1HD" secondAttribute="leading" constant="173" id="sPf-Br-z13"/>
+                            <constraint firstItem="wQw-zy-1HD" firstAttribute="bottom" secondItem="e8e-3f-3mL" secondAttribute="bottom" id="C5v-xC-GNM"/>
+                            <constraint firstItem="e8e-3f-3mL" firstAttribute="leading" secondItem="wQw-zy-1HD" secondAttribute="leading" id="Ltx-yC-6sd"/>
+                            <constraint firstItem="wQw-zy-1HD" firstAttribute="trailing" secondItem="e8e-3f-3mL" secondAttribute="trailing" id="pfs-Th-afc"/>
+                            <constraint firstItem="e8e-3f-3mL" firstAttribute="top" secondItem="wQw-zy-1HD" secondAttribute="top" id="uQK-ui-sCu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lGg-67-7g3"/>
+                    <navigationItem key="navigationItem" id="lGg-67-7g3">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1Jg-Ki-KYh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pex-pJ-khb">
+                                <rect key="frame" x="306.5" y="5" width="87.5" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="안내 시작"/>
+                                <connections>
+                                    <action selector="naviStartButton:" destination="6DG-rS-QNM" eventType="touchUpInside" id="VSM-cd-MCI"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="cbS-VN-5Ix" kind="showDetail" id="xH5-q1-I2K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="sFX-Ob-YJf" id="xKD-oH-q80"/>
+                        <outlet property="mapView" destination="e8e-3f-3mL" id="PNf-kE-8GG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TQ-ZT-ddp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,7 +353,7 @@
             <objects>
                 <viewController id="cbS-VN-5Ix" customClass="NaviMenuViewController" customModule="CarPoolApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="671-cl-vFu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="CQu-zg-Qxa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -386,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXB-51-vrj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="233"/>
+            <point key="canvasLocation" x="2146" y="-67"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

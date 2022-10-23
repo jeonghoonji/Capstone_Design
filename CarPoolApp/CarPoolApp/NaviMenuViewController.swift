@@ -8,6 +8,7 @@
 import UIKit
 import NMapsMap
 import CoreLocation
+import KakaoSDKNavi
 
 class NaviMenuViewController:UIViewController,CLLocationManagerDelegate{
     
