@@ -6,7 +6,7 @@ import SwiftyJSON
 import Alamofire
 import CoreLocation
 import KakaoSDKNavi
-
+import FirebaseDatabase
 
 class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate{
     
@@ -44,6 +44,10 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
         
         guard let user_latitude = locationManager.location?.coordinate.latitude else {return }
         guard let uesr_longitude = locationManager.location?.coordinate.longitude else {return }
+        
+        //파이어 베이스
+        ref = Database.database().reference()
+        
         
         
         let KAKAO_URL = "https://apis-navi.kakaomobility.com/v1/directions?origin=" + String(uesr_longitude) + "," + String(user_latitude) + "&destination=" + endX + "," + endY + "&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false"
@@ -156,8 +160,8 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
             marker.mapView = naverMapView
         }
         //
-        
-        
+
+        ref.child("findDriver").child("carPool").setValue(["lat":"\(user_latitude)","lng":"\(uesr_longitude)"])
         //viewdidLoad
         
     }

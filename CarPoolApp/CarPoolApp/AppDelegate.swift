@@ -1,13 +1,9 @@
-//
-//  AppDelegate.swift
-//  CarPoolApp
-//
-//  Created by 지정훈 on 2022/07/01.
-//
 
+//import NMapsMap
 import UIKit
 import KakaoSDKCommon
-//import NMapsMap
+
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,13 +12,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         KakaoSDK.initSDK(appKey: "34501b66b56aa6d412560ef2718d0b10")
-
+        
+        //파이어 베이스
+        FirebaseApp.configure()
         
         return true
     }
     
-   
-    
+  
 
     // MARK: UISceneSession Lifecycle
 

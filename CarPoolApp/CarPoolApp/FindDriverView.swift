@@ -1,16 +1,7 @@
-//
-//  FindDriverView.swift
-//  CarPoolApp
-//
-//  Created by 지정훈 on 2022/09/09.
-//
-
-//해야할일
-//- 주황색 배경 및 가운데 큰 돋보기 검색 중 애니메이션 뽀모도로 처럼 돋보기가 돌아가는 등
 
 import Foundation
 import UIKit
-
+import FirebaseDatabase
 
 
 class FindDriverView:UIViewController{
@@ -32,15 +23,12 @@ class FindDriverView:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//
-//        UIView.animate(withDuration: 0.6, delay: 0, animations: {
-//            self.searchView.transform = CGAffineTransform(rotationAngle: .pi)
-//        })
-//        UIView.animate(withDuration: 0.6, delay: 0.5, animations: {
-//            self.searchView.transform = CGAffineTransform(rotationAngle: .pi*2)
-//        })
-        
+        ref = Database.database().reference()
+        ref.observe(DataEventType.value, with:{ (startDriver) in
+            print("헬로 파이어베이스")
+            print(startDriver.value!)
+        })
+      
         
     //
     }

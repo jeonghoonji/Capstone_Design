@@ -10,7 +10,7 @@ target 'CarPoolApp' do
   pod 'NMapsMap' 
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  
+
 
 end
 

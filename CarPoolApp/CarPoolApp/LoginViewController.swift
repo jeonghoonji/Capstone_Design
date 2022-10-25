@@ -1,29 +1,25 @@
-//
-//  LoginViewController.swift
-//  CarPoolApp
-//
-//  Created by 지정훈 on 2022/07/01.
-//
 
-
-//해야 할일
-//- 로그인 토큰이 있을시 MapMenuViewController 으로 이동 코드 작성
-//- 로그인 토큰이 없을시 회원가입 및 정보 동의 후 PickUserViewController 으로 이동하여 유저의 드라이버/라이더 정보 저장 후
-//  MapMenuViewController으로 이동 코드 작성
 
 import Foundation
 import UIKit
 import KakaoSDKUser
 import KakaoSDKAuth
 import KakaoSDKCommon
+import FirebaseDatabase
+
+var ref: DatabaseReference!
 
 class LoginViewController:UIViewController{
     
     @IBOutlet weak var loginButton: UIButton!
-    
-    
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        var ref: DatabaseReference!
+//        ref = Database.database().reference()
+//
+//        ref.child("people!").child("person2").setValue(["name1":"fomagran1"])
         
         //버튼을 카카오 로그인 이미지로 설정
         loginButton.setImage(UIImage(named: "kakao_login"), for: .normal)
@@ -68,10 +64,11 @@ class LoginViewController:UIViewController{
         
         func getKakaoUserInfo(_ accessToken : String?){
             UserApi.shared.me() { [weak self] user, error in
-                
+                print(user)
                 if error == nil {
                     let name = (user?.properties?["nickname"]!  )
                     let profile = (user?.properties?["profile_image"]!)
+//                    let email = (user?.properties?[])
                     let userId = String(describing: user?.id)
                     print(userId)
                     print(name)
@@ -84,6 +81,7 @@ class LoginViewController:UIViewController{
 //                    }
                     UserDefaults.standard.setValue(name, forKey: "kakaoName")
                     UserDefaults.standard.setValue(profile, forKey: "kakaoProfile")
+//                    UserDefaults.standard.setValue(profile, forKey: "kakaoProfile")
                     
                 }
                 
@@ -173,7 +171,25 @@ class LoginViewController:UIViewController{
     }
     
     //
-    @IBAction func waitButton(_ sender: Any) {
+    
+    @IBAction func riderButton(_ sender: Any) {
+        let kakaoName = UserDefaults.standard.string(forKey: "kakaoName")
+        let profileName = kakaoName!
+        ref = Database.database().reference()
+        
+//        ref.child("people!").child("person2").setValue(["name1":"fomagran1"])
+        ref.child("rider").child("object").setValue(["name":"\(profileName)"])
+        print("riderButton tapped")
+    }
+    
+    
+    @IBAction func driverButton(_ sender: Any) {
+        let kakaoName = UserDefaults.standard.string(forKey: "kakaoName")
+        let profileName = kakaoName!
+        ref = Database.database().reference()
+        
+        ref.child("driver").child("object").setValue(["name":"\(profileName)"])
+        print("driverButton tapped")
     }
 }
 

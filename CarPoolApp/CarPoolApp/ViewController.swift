@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  CarPoolApp
-//
-//  Created by 지정훈 on 2022/07/01.
-//
+
 
 import UIKit
 //import KakaoSDKUser

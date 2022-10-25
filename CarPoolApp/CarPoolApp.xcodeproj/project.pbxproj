@@ -19,12 +19,17 @@
 		A74C1E59286EDB59000CB391 /* PickUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E58286EDB59000CB391 /* PickUserViewController.swift */; };
 		A74C1E5B286EDBC5000CB391 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */; };
 		A74C1E5D286EDC09000CB391 /* NaviMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */; };
+		A779626D290838B900A2E70C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A779626C290838B800A2E70C /* GoogleService-Info.plist */; };
 		A78AED3128D4CA9E00981913 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3028D4CA9E00981913 /* KakaoSDK */; };
 		A78AED3328D4CA9E00981913 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3228D4CA9E00981913 /* KakaoSDKAuth */; };
 		A78AED3528D4CA9E00981913 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3428D4CA9E00981913 /* KakaoSDKCommon */; };
 		A78AED3728D4CA9E00981913 /* KakaoSDKNavi in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3628D4CA9E00981913 /* KakaoSDKNavi */; };
 		A78AED3B28D5B3DE00981913 /* MapPolyLineNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */; };
 		A7BC04F228D004EC0093BA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BC04F128D004EC0093BA55 /* Main.storyboard */; };
+		A7F2832D290840D10086F703 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A7F2832C290840D10086F703 /* FirebaseAuth */; };
+		A7F2832F290840D10086F703 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A7F2832E290840D10086F703 /* FirebaseDatabase */; };
+		A7F28331290840D10086F703 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A7F28330290840D10086F703 /* FirebaseDatabaseSwift-Beta */; };
+		A7F28333290840D10086F703 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = A7F28332290840D10086F703 /* FirebaseDynamicLinks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,7 @@
 		A74C1E58286EDB59000CB391 /* PickUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickUserViewController.swift; path = ../../../../../../../Applications/PickUserViewController.swift; sourceTree = "<group>"; };
 		A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
 		A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviMenuViewController.swift; sourceTree = "<group>"; };
+		A779626C290838B800A2E70C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolyLineNaviViewController.swift; sourceTree = "<group>"; };
 		A7BC04F128D004EC0093BA55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CA43C733A5018A070D1443CD /* Pods-CarPoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPoolApp.debug.xcconfig"; path = "Target Support Files/Pods-CarPoolApp/Pods-CarPoolApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,7 +64,11 @@
 				A78AED3128D4CA9E00981913 /* KakaoSDK in Frameworks */,
 				A78AED3728D4CA9E00981913 /* KakaoSDKNavi in Frameworks */,
 				A78AED3528D4CA9E00981913 /* KakaoSDKCommon in Frameworks */,
+				A7F2832D290840D10086F703 /* FirebaseAuth in Frameworks */,
+				A7F28331290840D10086F703 /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				A7F2832F290840D10086F703 /* FirebaseDatabase in Frameworks */,
 				A78AED3328D4CA9E00981913 /* KakaoSDKAuth in Frameworks */,
+				A7F28333290840D10086F703 /* FirebaseDynamicLinks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +118,7 @@
 				A74208A028CB89E7008CE08A /* FindDriverView.swift */,
 				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
 				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
+				A779626C290838B800A2E70C /* GoogleService-Info.plist */,
 			);
 			path = CarPoolApp;
 			sourceTree = "<group>";
@@ -144,6 +155,10 @@
 				A78AED3228D4CA9E00981913 /* KakaoSDKAuth */,
 				A78AED3428D4CA9E00981913 /* KakaoSDKCommon */,
 				A78AED3628D4CA9E00981913 /* KakaoSDKNavi */,
+				A7F2832C290840D10086F703 /* FirebaseAuth */,
+				A7F2832E290840D10086F703 /* FirebaseDatabase */,
+				A7F28330290840D10086F703 /* FirebaseDatabaseSwift-Beta */,
+				A7F28332290840D10086F703 /* FirebaseDynamicLinks */,
 			);
 			productName = CarPoolApp;
 			productReference = A74C1E3D286E1623000CB391 /* CarPoolApp.app */;
@@ -175,6 +190,7 @@
 			mainGroup = A74C1E34286E1623000CB391;
 			packageReferences = (
 				A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A74C1E3E286E1623000CB391 /* Products */;
 			projectDirPath = "";
@@ -191,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7BC04F228D004EC0093BA55 /* Main.storyboard in Resources */,
+				A779626D290838B900A2E70C /* GoogleService-Info.plist in Resources */,
 				A74C1E4D286E1623000CB391 /* LaunchScreen.storyboard in Resources */,
 				A74C1E4A286E1623000CB391 /* Assets.xcassets in Resources */,
 			);
@@ -483,6 +500,14 @@
 				kind = branch;
 			};
 		};
+		A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +530,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A78AED2F28D4CA9E00981913 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKNavi;
+		};
+		A7F2832C290840D10086F703 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A7F2832E290840D10086F703 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A7F28330290840D10086F703 /* FirebaseDatabaseSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseDatabaseSwift-Beta";
+		};
+		A7F28332290840D10086F703 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7F2832B290840D10086F703 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

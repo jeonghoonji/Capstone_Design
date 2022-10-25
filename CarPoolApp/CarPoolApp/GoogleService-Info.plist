@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>762145926590-8ba9g25sr9tmakqt60cs8vjb593r7asv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.762145926590-8ba9g25sr9tmakqt60cs8vjb593r7asv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZpqR6V1ocgfz14dQ09VZPyE57QtNH9bs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>762145926590</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>CarPoolApp.com.CarPoolApp</string>
+	<key>PROJECT_ID</key>
+	<string>carpoolfi</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carpoolfi.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:762145926590:ios:0ee96740e4fafc6cd05def</string>
+</dict>
+</plist>
