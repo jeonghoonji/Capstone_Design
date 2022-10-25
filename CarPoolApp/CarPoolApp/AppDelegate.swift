@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         KakaoSDK.initSDK(appKey: "34501b66b56aa6d412560ef2718d0b10")
-//        NMFAuthManager.shared().govClientId = "JjUu0Dj6QJTszkxa35uQeKUtbN8RoMm4wIyzml6N"
+
         
         return true
     }

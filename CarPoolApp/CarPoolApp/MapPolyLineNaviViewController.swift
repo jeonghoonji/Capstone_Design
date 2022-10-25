@@ -88,18 +88,25 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
                     
                     
                     
-                    print("여기 실행")
+                   
                     print("case문 안에: \(self.polylineArray.count)")
                     var arr : [NMGLatLng] = []
+                    
                     for i in stride(from: 0, through: (self.polylineArray.count)-2, by: 2){
                         arr.append(NMGLatLng(lat: Double(self.polylineArray[i+1] ) ?? 0, lng: Double(self.polylineArray[i] ) ?? 0))
-                        print("실행")
+                 
+                        
                     }
                     print(self.polylineArray.count)
                     print(type(of: arr))
                     
                     let polyline = NMFPolylineOverlay(arr)
+                    polyline?.width = 5
+                    polyline?.color = UIColor.red
+
                     polyline?.mapView = naverMapView
+                    
+                    
                     //                    var pathOverlay = NMFPath()
                     //여기서 오류
                     //                    let test1 : NMGLineString = NMGLineString(points: 1.1)

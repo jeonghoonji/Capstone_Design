@@ -56,8 +56,7 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
         let header1 = HTTPHeader(name: "X-NCP-APIGW-API-KEY-ID", value: NAVER_CLIENT_ID)
         let header2 = HTTPHeader(name: "X-NCP-APIGW-API-KEY", value: NAVER_CLIENT_SECRET)
         let headers = HTTPHeaders([header1,header2])
-        
-09
+   
     
         
         let naverMapView = NMFMapView(frame: view.frame)

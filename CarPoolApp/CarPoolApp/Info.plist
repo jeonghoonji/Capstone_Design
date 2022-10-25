@@ -24,6 +24,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string></string>
 				<string>kakao34501b66b56aa6d412560ef2718d0b10</string>
 			</array>
 		</dict>

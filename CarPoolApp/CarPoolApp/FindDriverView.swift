@@ -26,18 +26,20 @@ class FindDriverView:UIViewController{
     
     @IBOutlet weak var backToMenu: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        startTimer()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        UIView.animate(withDuration: 0.5, delay: 0, animations: {
-            self.searchView.transform = CGAffineTransform(rotationAngle: .pi)
-        })
-        UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-            self.searchView.transform = CGAffineTransform(rotationAngle: .pi*2)
-        })
-        startTimer()
+    
+//
+//        UIView.animate(withDuration: 0.6, delay: 0, animations: {
+//            self.searchView.transform = CGAffineTransform(rotationAngle: .pi)
+//        })
+//        UIView.animate(withDuration: 0.6, delay: 0.5, animations: {
+//            self.searchView.transform = CGAffineTransform(rotationAngle: .pi*2)
+//        })
         
         
     //
@@ -49,11 +51,24 @@ class FindDriverView:UIViewController{
     // viewdidLoad에서 스타트 타이머 timeInterval이 60되야 1분씩 카운팅
     func startTimer(){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+           
     }
     
     // 1분 카운팅완료 후 화면 텍스트에 증가 5분넘으면 스탑 타이머 걸림
     @objc func timerCallback() {
-
+        
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.searchView.transform = CGAffineTransform(rotationAngle: .pi*0.25)
+            })
+            UIView.animate(withDuration: 1, delay: 0, animations: {
+                self.searchView.transform = CGAffineTransform(rotationAngle: .pi*0.5)
+            })
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.searchView.transform = CGAffineTransform(rotationAngle: .pi*0.75)
+            })
+            UIView.animate(withDuration: 1, delay: 0, animations: {
+                self.searchView.transform = CGAffineTransform(rotationAngle: .pi*2)
+            })
             mainTimeLabel.text = String(intcount)
             timeLabel.text = String(intcount)
             intcount += 1 //
