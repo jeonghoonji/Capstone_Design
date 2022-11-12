@@ -101,6 +101,8 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
                  
                         
                     }
+                    
+                    
                     print(self.polylineArray.count)
                     print(type(of: arr))
                     

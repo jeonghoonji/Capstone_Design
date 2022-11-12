@@ -177,8 +177,14 @@ class LoginViewController:UIViewController{
         let profileName = kakaoName!
         ref = Database.database().reference()
         
+        //위도 latitude , 경도 longitude
 //        ref.child("people!").child("person2").setValue(["name1":"fomagran1"])
-        ref.child("rider").child("object").setValue(["name":"\(profileName)"])
+        ref.child("Rider").child("object").setValue([
+            "name":"\(profileName)",
+            "lat" : "37.275435",
+            "lon": "127.1437385",
+            
+        ])
         print("riderButton tapped")
     }
     
@@ -188,8 +194,43 @@ class LoginViewController:UIViewController{
         let profileName = kakaoName!
         ref = Database.database().reference()
         
-        ref.child("driver").child("object").setValue(["name":"\(profileName)"])
+        ref.child("Driver").child("object").setValue([
+            "name":"\(profileName)",
+            "lat":"37.27412333",
+            "lon":"127.1434213",
+            "driving":"on"
+            ])
         print("driverButton tapped")
     }
 }
+//
+//메인
+//
+//처음에
+//라이더
+//드라이버
+//나누면서
+//
+//가지를 다르게 설정
+//
+//드라이버는 driving 1
+//
+//
+//
+//돋보기때 옵저버 넣어서 드라이빙이 1이다
+//알람 보내기
+//
+//
+//
+//유져의 경도 위도 저장했다가
+//
+//Notification일어날때
+//유저의 경도 위도 가져옴
+//그리고 네비를 다시 실행
+//Visit추가해서
+
+
+
+
+
 
