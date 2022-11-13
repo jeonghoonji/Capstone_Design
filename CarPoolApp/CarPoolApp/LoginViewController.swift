@@ -203,31 +203,6 @@ class LoginViewController:UIViewController{
         print("driverButton tapped")
     }
 }
-//
-//메인
-//
-//처음에
-//라이더
-//드라이버
-//나누면서
-//
-//가지를 다르게 설정
-//
-//드라이버는 driving 1
-//
-//
-//
-//돋보기때 옵저버 넣어서 드라이빙이 1이다
-//알람 보내기
-//
-//
-//
-//유져의 경도 위도 저장했다가
-//
-//Notification일어날때
-//유저의 경도 위도 가져옴
-//그리고 네비를 다시 실행
-//Visit추가해서
 
 
 

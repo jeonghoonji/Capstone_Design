@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "free-icon-spring-rider-3617923.png",
+      "filename" : "destination.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "destination@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

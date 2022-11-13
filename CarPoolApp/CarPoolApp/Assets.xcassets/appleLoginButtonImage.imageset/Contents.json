@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "free-icon-spring-rider-3617923.png",
+      "filename" : "appleButtonImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "appleButtonImage@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "appleButtonImage@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
