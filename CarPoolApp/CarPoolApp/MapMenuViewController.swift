@@ -13,7 +13,6 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     @IBOutlet weak var startPointTextField: UITextField!
     @IBOutlet weak var endPointTextField: UITextField!
     @IBOutlet weak var mapView: UIView!
-    
 
     var locationManager = CLLocationManager()
     
@@ -32,11 +31,15 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     var directX : String = ""
     var directY : String = ""
     
+    var destinationText = UserDefaults.standard.string(forKey: "PickUserViewControllerDestinationTextData")
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        print(destinationText)
+        endPointTextField.text = destinationText ?? ""
+
         //위치 정보 묻기
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

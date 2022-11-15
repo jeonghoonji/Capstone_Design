@@ -1,5 +1,5 @@
 //
-//  MapFindRiderView.swift
+//  SearchButtonView.swift
 //  CarPoolApp
 //
 //  Created by 지정훈 on 2022/11/14.
@@ -16,18 +16,24 @@ import KakaoSDKNavi
 import FirebaseDatabase
 import MapKit
 
-
-
-class MapFindRiderView : UIViewController {
+var destinationText = UserDefaults.standard.string(forKey: "PickUserViewControllerDestinationTextData")
+class SearchButtonView : UIViewController {
+    
+    var locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
-    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        print(destinationText)
+        
         let naverMapView = NMFMapView(frame: mapView.frame)
         view.addSubview(naverMapView)
+        
+//        let marker1 = NMFMarker()
+//        marker1.position = NMGLatLng(lat: Double(endY) ?? 0.0, lng: Double(endX) ?? 0.0)
+//        marker1.mapView = naverMapView
         
         if CLLocationManager.locationServicesEnabled() {
             print(" MapPolyLineNaviViewController 위치 서비스 On 상태")
@@ -42,4 +48,6 @@ class MapFindRiderView : UIViewController {
             marker.mapView = naverMapView
         }
     }
+    
+   
 }

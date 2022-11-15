@@ -399,6 +399,10 @@
                                 <buttonConfiguration key="configuration" style="filled" title="검색하기">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchViewButtonTapped:" destination="99j-fw-aJe" eventType="touchUpInside" id="ICv-I4-7qr"/>
+                                    <segue destination="rpg-WC-abV" kind="push" id="FH8-70-78P"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fo-rN-wmG">
                                 <rect key="frame" x="41" y="661" width="332" height="152"/>
@@ -461,6 +465,7 @@
                         <outlet property="kakaoNameLabel" destination="KYB-R1-qfg" id="DT2-gJ-1PI"/>
                         <outlet property="kakaoProfileImage" destination="iFl-9Q-kqc" id="5cg-OQ-ufe"/>
                         <outlet property="menuMapView" destination="6Fo-rN-wmG" id="EQa-h9-1bH"/>
+                        <outlet property="textFieldAddress" destination="8qf-a6-QFV" id="UFG-9N-EWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hC-eR-P4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -474,10 +479,25 @@
                     <view key="view" contentMode="scaleToFill" id="pYk-2z-O6B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhF-oN-EnX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kv1-ye-MjM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MhF-oN-EnX" firstAttribute="top" secondItem="pYk-2z-O6B" secondAttribute="top" id="G8B-Us-jcK"/>
+                            <constraint firstItem="MhF-oN-EnX" firstAttribute="leading" secondItem="kv1-ye-MjM" secondAttribute="leading" id="Ugl-RF-CpY"/>
+                            <constraint firstItem="MhF-oN-EnX" firstAttribute="trailing" secondItem="kv1-ye-MjM" secondAttribute="trailing" id="X5N-VD-6ZP"/>
+                            <constraint firstAttribute="bottom" secondItem="MhF-oN-EnX" secondAttribute="bottom" id="jqB-fa-EWy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4yw-ax-TGk"/>
+                    <connections>
+                        <outlet property="mapView" destination="MhF-oN-EnX" id="sZq-mv-bzO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKy-fr-vrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,19 +510,65 @@
                     <view key="view" contentMode="scaleToFill" id="X0X-CO-fW6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi0-Dm-xKY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cJ7-EO-dtH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pi0-Dm-xKY" firstAttribute="top" secondItem="X0X-CO-fW6" secondAttribute="top" id="CdK-dU-uOq"/>
+                            <constraint firstItem="pi0-Dm-xKY" firstAttribute="trailing" secondItem="cJ7-EO-dtH" secondAttribute="trailing" id="O5b-5I-xUP"/>
+                            <constraint firstAttribute="bottom" secondItem="pi0-Dm-xKY" secondAttribute="bottom" id="Oqs-NP-w0d"/>
+                            <constraint firstItem="pi0-Dm-xKY" firstAttribute="leading" secondItem="cJ7-EO-dtH" secondAttribute="leading" id="qy3-fg-2YZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z9f-oA-158"/>
+                    <connections>
+                        <outlet property="mapView" destination="pi0-Dm-xKY" id="tzM-t7-10K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfF-fV-JHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="267" y="-632"/>
         </scene>
+        <!--Search Button View-->
+        <scene sceneID="Pcv-6D-wYt">
+            <objects>
+                <viewController id="atw-dQ-AMT" customClass="SearchButtonView" customModule="CarPoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YR1-kJ-uEO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zj2-0l-bLb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cyv-KI-HmW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zj2-0l-bLb" firstAttribute="top" secondItem="YR1-kJ-uEO" secondAttribute="top" id="6gx-uM-bJ3"/>
+                            <constraint firstItem="Zj2-0l-bLb" firstAttribute="leading" secondItem="Cyv-KI-HmW" secondAttribute="leading" id="Q3a-c9-Pol"/>
+                            <constraint firstItem="Zj2-0l-bLb" firstAttribute="trailing" secondItem="Cyv-KI-HmW" secondAttribute="trailing" id="VqS-XQ-Mgp"/>
+                            <constraint firstAttribute="bottom" secondItem="Zj2-0l-bLb" secondAttribute="bottom" id="v8s-dO-tWf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3zm-j2-da8"/>
+                    <connections>
+                        <outlet property="mapView" destination="Zj2-0l-bLb" id="QXa-zr-KGq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xv1-A3-8nc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="-625.44642857142856"/>
+        </scene>
         <!--map-->
         <scene sceneID="VJq-ws-KpD">
             <objects>
-                <viewController id="rpg-WC-abV" customClass="MapMenuViewController" customModule="CarPoolApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextVC" id="rpg-WC-abV" customClass="MapMenuViewController" customModule="CarPoolApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vE-dl-VMv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,6 +657,7 @@
                             <barButtonItem title="카풀" image="magnifyingglass" catalog="system" id="90K-Fe-brB" userLabel="카풀">
                                 <connections>
                                     <action selector="findDriverButton:" destination="6DG-rS-QNM" id="Fw2-db-VOe"/>
+                                    <segue destination="y1h-ch-rST" kind="push" id="msH-X2-7uo"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="1Jg-Ki-KYh">
@@ -606,6 +673,9 @@
                                         <action selector="naviStartButton:" destination="6DG-rS-QNM" eventType="touchUpInside" id="VSM-cd-MCI"/>
                                     </connections>
                                 </button>
+                                <connections>
+                                    <segue destination="cbS-VN-5Ix" kind="push" id="jAZ-k2-pfB"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -627,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-cU-Ufg">
-                                <rect key="frame" x="107" y="404" width="200" height="144"/>
+                                <rect key="frame" x="107" y="448" width="200" height="51"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="다시 검색!">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
@@ -659,7 +729,7 @@
             <objects>
                 <viewController id="1Bg-Vm-2Z5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXm-Dy-mBm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="yBh-zB-BBj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -688,7 +758,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-ah-m4Y">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-ah-m4Y">
                                 <rect key="frame" x="59" y="575" width="296" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-WL-cNK">
@@ -723,6 +793,7 @@
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="Zdl-ah-m4Y" firstAttribute="centerX" secondItem="ai7-UR-ViB" secondAttribute="centerX" id="3IM-bN-3NR"/>
+                            <constraint firstItem="xAI-Yy-fMR" firstAttribute="bottom" secondItem="Zdl-ah-m4Y" secondAttribute="bottom" constant="217.5" id="FXY-ol-rRz"/>
                             <constraint firstItem="ai7-UR-ViB" firstAttribute="top" secondItem="xAI-Yy-fMR" secondAttribute="top" constant="210" id="QFS-G7-Cd3"/>
                             <constraint firstItem="xAI-Yy-fMR" firstAttribute="trailing" secondItem="ai7-UR-ViB" secondAttribute="trailing" constant="87" id="nnR-Zw-rp9"/>
                             <constraint firstItem="ai7-UR-ViB" firstAttribute="leading" secondItem="xAI-Yy-fMR" secondAttribute="leading" constant="87" id="tws-Sf-rqa"/>
@@ -840,7 +911,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cGM-4m-p68"/>
+        <segue reference="msH-X2-7uo"/>
+        <segue reference="FH8-70-78P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appleLoginButtonImage" width="113" height="17"/>

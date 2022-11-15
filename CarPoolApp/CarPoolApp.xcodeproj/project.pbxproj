@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		341476710B0908DBF23B01B9 /* Pods_CarPoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FB8A052B355B4C5C291B6D1 /* Pods_CarPoolApp.framework */; };
+		A740DAE62922AA3600D4CA89 /* MapDriverUser.json in Resources */ = {isa = PBXBuildFile; fileRef = A740DAE52922AA3600D4CA89 /* MapDriverUser.json */; };
 		A74208A128CB89E7008CE08A /* FindDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74208A028CB89E7008CE08A /* FindDriverViewController.swift */; };
 		A74C1E41286E1623000CB391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E40286E1623000CB391 /* AppDelegate.swift */; };
 		A74C1E43286E1623000CB391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E42286E1623000CB391 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 		A74C1E59286EDB59000CB391 /* PickUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E58286EDB59000CB391 /* PickUserViewController.swift */; };
 		A74C1E5B286EDBC5000CB391 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */; };
 		A74C1E5D286EDC09000CB391 /* NaviMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */; };
+		A755975B29226274009C08A1 /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A755975A29226274009C08A1 /* SearchButtonView.swift */; };
 		A779626D290838B900A2E70C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A779626C290838B800A2E70C /* GoogleService-Info.plist */; };
 		A77B93CE292156B3002FB23F /* MapFindDriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B93CD292156B3002FB23F /* MapFindDriverView.swift */; };
 		A77B93D02921597E002FB23F /* MapFindRiderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B93CF2921597E002FB23F /* MapFindRiderView.swift */; };
@@ -40,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0FB8A052B355B4C5C291B6D1 /* Pods_CarPoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarPoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE991646A6A20A294F01C92 /* Pods-CarPoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPoolApp.release.xcconfig"; path = "Target Support Files/Pods-CarPoolApp/Pods-CarPoolApp.release.xcconfig"; sourceTree = "<group>"; };
+		A740DAE52922AA3600D4CA89 /* MapDriverUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapDriverUser.json; sourceTree = "<group>"; };
 		A74208A028CB89E7008CE08A /* FindDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDriverViewController.swift; sourceTree = "<group>"; };
 		A74C1E3D286E1623000CB391 /* CarPoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74C1E40286E1623000CB391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		A74C1E58286EDB59000CB391 /* PickUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickUserViewController.swift; path = ../../../../../../../Applications/PickUserViewController.swift; sourceTree = "<group>"; };
 		A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
 		A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviMenuViewController.swift; sourceTree = "<group>"; };
+		A755975A29226274009C08A1 /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
 		A779626C290838B800A2E70C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A77B93CD292156B3002FB23F /* MapFindDriverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFindDriverView.swift; sourceTree = "<group>"; };
 		A77B93CF2921597E002FB23F /* MapFindRiderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFindRiderView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A740DAE42922A9FE00D4CA89 /* JSONData */ = {
+			isa = PBXGroup;
+			children = (
+				A740DAE52922AA3600D4CA89 /* MapDriverUser.json */,
+			);
+			path = JSONData;
+			sourceTree = "<group>";
+		};
 		A74C1E34286E1623000CB391 = {
 			isa = PBXGroup;
 			children = (
@@ -124,15 +136,17 @@
 				A74C1E4E286E1623000CB391 /* Info.plist */,
 				A74C1E56286EDB03000CB391 /* LoginViewController.swift */,
 				A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */,
+				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 				A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */,
+				A755975A29226274009C08A1 /* SearchButtonView.swift */,
 				A74208A028CB89E7008CE08A /* FindDriverViewController.swift */,
 				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
-				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 				A7B9ABA729091C00008C2130 /* FindView.swift */,
 				A77B93CF2921597E002FB23F /* MapFindRiderView.swift */,
 				A77B93CD292156B3002FB23F /* MapFindDriverView.swift */,
 				A77B93D129215B56002FB23F /* TapMenuNaviView.swift */,
 				A77B93D329215CC6002FB23F /* MapRiderDriverMarkerView.swift */,
+				A740DAE42922A9FE00D4CA89 /* JSONData */,
 				A779626C290838B800A2E70C /* GoogleService-Info.plist */,
 			);
 			path = CarPoolApp;
@@ -225,6 +239,7 @@
 				A779626D290838B900A2E70C /* GoogleService-Info.plist in Resources */,
 				A74C1E4D286E1623000CB391 /* LaunchScreen.storyboard in Resources */,
 				A74C1E4A286E1623000CB391 /* Assets.xcassets in Resources */,
+				A740DAE62922AA3600D4CA89 /* MapDriverUser.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +299,7 @@
 				A77B93D429215CC6002FB23F /* MapRiderDriverMarkerView.swift in Sources */,
 				A77B93CE292156B3002FB23F /* MapFindDriverView.swift in Sources */,
 				A74C1E41286E1623000CB391 /* AppDelegate.swift in Sources */,
+				A755975B29226274009C08A1 /* SearchButtonView.swift in Sources */,
 				A77B93D02921597E002FB23F /* MapFindRiderView.swift in Sources */,
 				A74C1E59286EDB59000CB391 /* PickUserViewController.swift in Sources */,
 				A7B9ABA829091C00008C2130 /* FindView.swift in Sources */,

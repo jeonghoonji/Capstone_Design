@@ -38,6 +38,8 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
     let endX = UserDefaults.standard.string(forKey:"endPointXUserDefaults")!
     let endY = UserDefaults.standard.string(forKey:"endPointYUserDefaults")!
     
+    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
