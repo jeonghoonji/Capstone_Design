@@ -1,5 +1,5 @@
 /*
-  MapDriverUser.json
+  MapUser.json
   CarPoolApp
 
   Created by 지정훈 on 2022/11/15.
@@ -26,33 +26,14 @@
         },
         {
             "latitude" : 37.2796111
-            "longitude" : 127.1399035
+            "longitude" : 127.1283805
         },
         
         {
-            "latitude" : 37.2724516
-            "longitude" : 127.1268912
-        },
-        {
-            "latitude" : 37.272497
-            "longitude" : 127.1242390
-        },
-        {
             "latitude" : 37.2728135
-            "longitude" : 127.111421
+            "longitude" : 127.1283805
         },
-        {
-            "latitude" : 37.3212032
-            "longitude" : 127.1282274
-        },
-        {
-            "latitude" : 37.2786818
-            "longitude" : 127.1889085
-        },
-       
+
         
     ]
 }
-
-
-

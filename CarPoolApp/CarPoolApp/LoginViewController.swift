@@ -12,7 +12,12 @@ var ref: DatabaseReference!
 class LoginViewController:UIViewController{
     
     @IBOutlet weak var loginButton: UIButton!
-   
+    
+    
+    //텍스트 필드 클릭시 내려가기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,7 @@ class LoginViewController:UIViewController{
         
         //버튼을 카카오 로그인 이미지로 설정
         loginButton.setImage(UIImage(named: "kakao_login"), for: .normal)
+            
         
         
         //카카오톡 설치 여부 확인

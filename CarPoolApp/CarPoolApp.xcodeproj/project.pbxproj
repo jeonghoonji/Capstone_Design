@@ -26,6 +26,8 @@
 		A77B93D02921597E002FB23F /* MapFindRiderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B93CF2921597E002FB23F /* MapFindRiderView.swift */; };
 		A77B93D229215B56002FB23F /* TapMenuNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B93D129215B56002FB23F /* TapMenuNaviView.swift */; };
 		A77B93D429215CC6002FB23F /* MapRiderDriverMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B93D329215CC6002FB23F /* MapRiderDriverMarkerView.swift */; };
+		A78477E12923CCD900C59A5E /* MapUser.json in Resources */ = {isa = PBXBuildFile; fileRef = A78477E02923CCD900C59A5E /* MapUser.json */; };
+		A78477E32923EA7200C59A5E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78477E22923EA7200C59A5E /* TestView.swift */; };
 		A78AED3128D4CA9E00981913 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3028D4CA9E00981913 /* KakaoSDK */; };
 		A78AED3328D4CA9E00981913 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3228D4CA9E00981913 /* KakaoSDKAuth */; };
 		A78AED3528D4CA9E00981913 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = A78AED3428D4CA9E00981913 /* KakaoSDKCommon */; };
@@ -62,6 +64,8 @@
 		A77B93CF2921597E002FB23F /* MapFindRiderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFindRiderView.swift; sourceTree = "<group>"; };
 		A77B93D129215B56002FB23F /* TapMenuNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapMenuNaviView.swift; sourceTree = "<group>"; };
 		A77B93D329215CC6002FB23F /* MapRiderDriverMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRiderDriverMarkerView.swift; sourceTree = "<group>"; };
+		A78477E02923CCD900C59A5E /* MapUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapUser.json; sourceTree = "<group>"; };
+		A78477E22923EA7200C59A5E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolyLineNaviViewController.swift; sourceTree = "<group>"; };
 		A7B9ABA729091C00008C2130 /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		A7BC04F128D004EC0093BA55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A740DAE52922AA3600D4CA89 /* MapDriverUser.json */,
+				A78477E02923CCD900C59A5E /* MapUser.json */,
 			);
 			path = JSONData;
 			sourceTree = "<group>";
@@ -138,9 +143,10 @@
 				A74C1E5A286EDBC5000CB391 /* MapMenuViewController.swift */,
 				A74C1E58286EDB59000CB391 /* PickUserViewController.swift */,
 				A78AED3A28D5B3DE00981913 /* MapPolyLineNaviViewController.swift */,
+				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
+				A78477E22923EA7200C59A5E /* TestView.swift */,
 				A755975A29226274009C08A1 /* SearchButtonView.swift */,
 				A74208A028CB89E7008CE08A /* FindDriverViewController.swift */,
-				A74C1E5C286EDC09000CB391 /* NaviMenuViewController.swift */,
 				A7B9ABA729091C00008C2130 /* FindView.swift */,
 				A77B93CF2921597E002FB23F /* MapFindRiderView.swift */,
 				A77B93CD292156B3002FB23F /* MapFindDriverView.swift */,
@@ -239,6 +245,7 @@
 				A779626D290838B900A2E70C /* GoogleService-Info.plist in Resources */,
 				A74C1E4D286E1623000CB391 /* LaunchScreen.storyboard in Resources */,
 				A74C1E4A286E1623000CB391 /* Assets.xcassets in Resources */,
+				A78477E12923CCD900C59A5E /* MapUser.json in Resources */,
 				A740DAE62922AA3600D4CA89 /* MapDriverUser.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +303,7 @@
 				A77B93D229215B56002FB23F /* TapMenuNaviView.swift in Sources */,
 				A74C1E45286E1623000CB391 /* ViewController.swift in Sources */,
 				A74C1E5B286EDBC5000CB391 /* MapMenuViewController.swift in Sources */,
+				A78477E32923EA7200C59A5E /* TestView.swift in Sources */,
 				A77B93D429215CC6002FB23F /* MapRiderDriverMarkerView.swift in Sources */,
 				A77B93CE292156B3002FB23F /* MapFindDriverView.swift in Sources */,
 				A74C1E41286E1623000CB391 /* AppDelegate.swift in Sources */,

@@ -32,13 +32,17 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
     var directY : String = ""
     
     var destinationText = UserDefaults.standard.string(forKey: "PickUserViewControllerDestinationTextData")
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(destinationText)
-        endPointTextField.text = destinationText ?? ""
+//        print(destinationText)
+//        endPointTextField.text = destinationText ?? "경기도 용인시 구갈동"
 
         //위치 정보 묻기
         locationManager.delegate = self
@@ -68,6 +72,16 @@ class MapMenuViewController:UIViewController,CLLocationManagerDelegate{
             let marker = NMFMarker()
             marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
             marker.mapView = naverMapView
+            //
+            marker.iconTintColor = UIColor.red
+            marker.iconImage = NMFOverlayImage(image: UIImage(systemName: "person.fill.checkmark")!)
+            marker.width = 40
+            marker.height = 30
+            let infoWindow = NMFInfoWindow()
+            let dataSource = NMFInfoWindowDefaultTextSource.data()
+            dataSource.title = "출발지"
+            infoWindow.dataSource = dataSource
+            infoWindow.open(with: marker)
         }
 
         

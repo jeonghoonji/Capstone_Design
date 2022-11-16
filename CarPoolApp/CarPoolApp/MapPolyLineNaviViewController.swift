@@ -34,11 +34,15 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
     
     var locationManager = CLLocationManager()
     
-    let endString = UserDefaults.standard.string(forKey:"endPointTextUserDefaults")!
-    let endX = UserDefaults.standard.string(forKey:"endPointXUserDefaults")!
-    let endY = UserDefaults.standard.string(forKey:"endPointYUserDefaults")!
+    let endString = UserDefaults.standard.string(forKey:"endPointTextUserDefaults") ?? "경기도 용인시 구갈동 강남대학교"
+    let endX = UserDefaults.standard.string(forKey:"endPointXUserDefaults") ?? "37.2770729"
+    let endY = UserDefaults.standard.string(forKey:"endPointYUserDefaults") ?? "127.1341291"
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
+   
 
     override func viewDidLoad() {
         
@@ -76,6 +80,8 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
                     for i in 0..<roads.count{
                         var test3 = roads[i]
                         var vertexes = test3["vertexes"]
+                        
+                        print(vertexes)
                         //                        print(vertexes)
                         for j in 0..<vertexes.count{
                             do{
@@ -143,6 +149,17 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
         let marker1 = NMFMarker()
         marker1.position = NMGLatLng(lat: Double(endY) ?? 0.0, lng: Double(endX) ?? 0.0)
         marker1.mapView = naverMapView
+        marker1.iconTintColor = UIColor.red
+        marker1.iconImage = NMFOverlayImage(image: UIImage(systemName: "flag.checkered")!)
+        marker1.width = 40
+        marker1.height = 30
+        let infoWindow = NMFInfoWindow()
+        let dataSource = NMFInfoWindowDefaultTextSource.data()
+        dataSource.title = "목적지"
+        infoWindow.dataSource = dataSource
+        infoWindow.open(with: marker1)
+        
+        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -162,6 +179,16 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
             let marker = NMFMarker()
             marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
             marker.mapView = naverMapView
+            //
+            marker.iconImage = NMFOverlayImage(image: UIImage(systemName: "person.fill.checkmark")!)
+            marker.width = 40
+            marker.height = 30
+            marker.iconTintColor = UIColor.red
+            let infoWindow = NMFInfoWindow()
+            let dataSource = NMFInfoWindowDefaultTextSource.data()
+            dataSource.title = "출발지"
+            infoWindow.dataSource = dataSource
+            infoWindow.open(with: marker)
         }
         //
 
@@ -185,16 +212,16 @@ class MapPolyLineNaviViewController : UIViewController,CLLocationManagerDelegate
         
         //x -> Longitude 37
         //y -> Latitude 127
-        print("endX:\(endX)")
-        var option = NaviOption(coordType : .WGS84)
-        let destination = NaviLocation(name: endString, x: endX, y: endY)
-        // 경유지
-        //        let viaList = [NaviLocation(name: "판교역 1번출구", x:  "127.063433", y: "37.1984409")]
-        
-        guard let navigateUrl = NaviApi.shared.navigateUrl(destination: destination, option:option /*,viaList: viaList?*/) else {
-            return
-        }
-        UIApplication.shared.open(navigateUrl, options: [:], completionHandler: nil)
+//        print("endX:\(endX)")
+//        var option = NaviOption(coordType : .WGS84)
+//        let destination = NaviLocation(name: endString, x: endX, y: endY)
+//        // 경유지
+//        //        let viaList = [NaviLocation(name: "판교역 1번출구", x:  "127.063433", y: "37.1984409")]
+//        
+//        guard let navigateUrl = NaviApi.shared.navigateUrl(destination: destination, option:option /*,viaList: viaList?*/) else {
+//            return
+//        }
+//        UIApplication.shared.open(navigateUrl, options: [:], completionHandler: nil)
         
     }
     

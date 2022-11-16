@@ -94,46 +94,64 @@ class MapFindDriverView : UIViewController {
         let naverMapView = NMFMapView(frame: mapView.frame)
         view.addSubview(naverMapView)
         
-        let marker1 = NMFMarker()
-        marker1.position = NMGLatLng(lat: 37.2744861, lng:  127.1283805)
-        marker1.mapView = naverMapView
         
-        let marker2 = NMFMarker()
-        marker2.position = NMGLatLng(lat: 37.272324, lng:  127.1289919)
-        marker2.mapView = naverMapView
-        
-        let marker3 = NMFMarker()
-        marker3.position = NMGLatLng(lat: 37.2718358, lng:  127.120037)
-        marker3.mapView = naverMapView
-        
-        let marker4 = NMFMarker()
-        marker4.position = NMGLatLng(lat: 37.2711035, lng:  127.1389174)
-        marker4.mapView = naverMapView
-        
-        let marker5 = NMFMarker()
-        marker5.position = NMGLatLng(lat: 37.2796111, lng:  127.1283805)
-        marker5.mapView = naverMapView
+        let Usermarker1 = NMFMarker()
+        Usermarker1.position = NMGLatLng(lat: 37.27574, lng:  127.13249)
+        Usermarker1.mapView = naverMapView
+        Usermarker1.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker1.iconTintColor = UIColor.red
+       
+        //
+        let Usermarker2 = NMFMarker()
+        Usermarker2.position = NMGLatLng(lat: 37.2716614, lng: 127.1273424)
+        Usermarker2.mapView = naverMapView
+        Usermarker2.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker2.iconTintColor = UIColor.red
+       
+        //
+        let Usermarker3 = NMFMarker()
+        Usermarker3.position = NMGLatLng(lat: 37.2717136, lng:  127.1302734)
+        Usermarker3.mapView = naverMapView
+        Usermarker3.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker3.iconTintColor = UIColor.red
         
         //
-        let marker6 = NMFMarker()
-        marker6.position = NMGLatLng(lat: 37.2728135, lng:  127.1283805)
-        marker6.mapView = naverMapView
-
-        
+        let Usermarker4 = NMFMarker()
+        Usermarker4.position = NMGLatLng(lat: 37.2687313, lng:  127.1289391)
+        Usermarker4.mapView = naverMapView
+        Usermarker4.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker4.iconTintColor = UIColor.red
        
+        
+        //
+        let Usermarker5 = NMFMarker()
+        Usermarker5.position = NMGLatLng(lat: 37.2724545, lng:  127.1376502)
+        Usermarker5.mapView = naverMapView
+        Usermarker5.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker5.iconTintColor = UIColor.red
+       
+        let Usermarker6 = NMFMarker()
+        Usermarker6.position = NMGLatLng(lat: 37.286581, lng:  127.1037513)
+        Usermarker6.mapView = naverMapView
+        Usermarker6.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.and.tire.marks")!)
+        Usermarker6.iconTintColor = UIColor.red
+       
+        
+//        let destination = NaviLocation(name: "강남대학교 이공관", x: "127.1341291", y: "37.2770729")
         
         if CLLocationManager.locationServicesEnabled() {
             print(" MapPolyLineNaviViewController 위치 서비스 On 상태")
             locationManager.startUpdatingLocation()
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
+//            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
+            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.2770729, lng: 127.1341291))
             cameraUpdate.animation = .easeIn
             naverMapView.moveCamera(cameraUpdate)
             
             //현재 위치 마커
             let marker = NMFMarker()
             marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
-            marker.iconImage = NMFOverlayImage(image: UIImage(systemName: "car.rear.fill")!)
-            marker.iconTintColor = UIColor.red
+            marker.iconImage = NMFOverlayImage(image: UIImage(systemName: "figure.stand")!)
+            marker.iconTintColor = UIColor.blue
             marker.width = 20
             marker.height = 20
             marker.mapView = naverMapView

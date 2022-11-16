@@ -19,13 +19,13 @@ class FindDriverViewController : UIViewController {
     @IBOutlet weak var backToMenu: UIButton!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        startTimer()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        startTimer()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        startTimer()
     }
     
     
